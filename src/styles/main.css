@@ -1,0 +1,472 @@
+/* Reset styles */
+body, ul, li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a, button, textarea {
+  display: inline-block;
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* Skip link styles */
+.skip-link {
+  position: absolute;
+  left: 0;
+  padding: 8px;
+  background-color: #186F65;
+  text-align: center;
+  color: white;
+  z-index: 100;
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.skip-link:focus {
+  opacity: 1;
+}
+
+/* App Bar Styles */
+header {
+  background-color: #186F65;
+  color: white;
+  padding: 20px 0;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo img {
+  max-width: 60px; 
+  height: auto;
+}
+
+.nav-menu-container {
+  display: flex;
+  align-items: center;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+}
+
+.nav-menu a {
+  /* padding: 20px; */
+  font-size: 20px;
+  padding-top: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+  color: white;
+}
+
+.nav-menu a:hover {
+  background-color: #004225;
+}
+
+
+.menu-icon {
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  background-color: #186F65;
+  border: 0;
+}
+
+@media (min-width: 769px) {
+  .menu-icon {
+    display: none;
+  }
+}
+
+/* Responsiveness for nav menu */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    position: absolute;
+    background-color: #186F65;
+    top: 80px;
+    left: 10;
+    right: 0;
+    z-index: 1;
+  }
+  
+  .nav-menu.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-menu.active li {
+    padding: 12px;
+    text-align: center;
+  }
+}
+
+.bar {
+  width: 100%;
+  height: 6px;
+  background-color: white;
+  /* margin: 3px 0; */
+}
+
+/* Navigation Drawer Styles */
+.nav-drawer {
+  background-color: #186F65;
+  position: fixed;
+  top: 0;
+  left: -250px;
+  width: 250px;
+  height: 100%;
+  overflow-y: auto;
+  transition: left 0.3s ease, background-color 0.3s ease;
+}
+
+.nav-drawer:hover {
+  background-color: #004225;
+}
+
+.nav-drawer-menu {
+  padding: 20px;
+}
+
+.nav-drawer-menu li {
+  margin-bottom: 10px;
+}
+
+.nav-drawer-menu a {
+  width: 44px;
+  text-decoration: none;
+  color: white;
+}
+
+
+/* Hero Element Styles */
+.hero {
+  text-align: center;
+  position: relative;
+  background-color: #FCE09B;
+}
+
+.hero img {
+  width: 100%;
+}
+
+.hero-title {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: bold;
+  color: #FFB000;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 24px;
+  }
+}
+
+.app-title {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 20px;
+  color: #B2533E;
+}
+
+.restaurant-list {
+  margin: 20px;
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Restaurant Card Styles */
+.restaurant-card {
+  background-color: #F5F5DC;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  flex-basis: calc(33.333% - 20px);
+  box-sizing: border-box;
+  transition: transform 0.2s ease-in-out;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.restaurant-card:hover {
+  transform: translateY(-5px);
+}
+
+.restaurant-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.restaurant-card h2 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.restaurant-card p {
+  margin: 0;
+  color: #666;
+}
+
+/* Styles for "Lihat Detail" Button */
+.restaurant-card .restaurant-detail-button {
+  display: block;
+  padding: 10px 20px;
+  background-color: #FFB000; 
+  color: white;
+  text-decoration: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 10px auto;
+  font-weight: bold; 
+  text-transform: uppercase; 
+}
+
+.restaurant-card .restaurant-detail-button:hover {
+  background-color: #FFD000; 
+}
+
+/* Responsiveness for restaurant cards */
+@media (max-width: 768px) {
+  .restaurant-card {
+    flex-basis: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 480px) {
+  .restaurant-card {
+    flex-basis: 100%;
+  }
+}
+
+/* Restaurant Detail Container Styles */
+.restaurant-detail-container {
+  display: flex;
+  background-color: rgb(247, 234, 204);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  align-items: flex-start;
+}
+
+/* Restaurant Image Styles */
+.restaurant-image {
+  padding: 10px;
+  text-align: center;
+  flex-basis: 40%;
+}
+
+.restaurant-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
+
+/* Restaurant Details Styles */
+.restaurant-details {
+  padding: 10px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  flex-basis: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Restaurant Name Styles */
+.restaurant-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+  text-align: right; 
+  padding-right: 20px; 
+}
+
+
+/* Customer Reviews Styles */
+.restaurant-details h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-align: left; 
+}
+
+.restaurant-details ul {
+  background-color: #FFFFFF;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  text-align: left;
+}
+
+.restaurant-details ul li {
+  background-color: #FFFFFF;
+  margin: 5px 0;
+  font-size: 16px;
+  color: #333;
+  text-align: left;
+}
+
+.restaurant-details ul li p {
+  margin: 0; 
+}
+
+.restaurant-details ul li {
+  background-color: #fdfdfd; 
+  border: 1px solid #ddd; 
+  padding: 10px; 
+  border-radius: 5px; 
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); 
+}
+
+.restaurant-details ul li strong {
+  font-weight: bold;
+  color: #333; 
+}
+
+.restaurant-details ul li p:nth-child(2) {
+  color: #666; 
+}
+
+.restaurant-details ul li p:nth-child(3) {
+  color: #333; 
+}
+
+
+#add-to-favorite-button {
+  background-color: #FFB000;
+  color: white;
+  border: none;
+  padding: 5px 10px; 
+  border-radius: 5px;
+  font-size: 16px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  text-align: center;
+  min-width: 100px; 
+}
+
+#add-to-favorite-button:hover {
+  background-color: #FFD000;
+}
+
+#add-to-favorite-button.unliked {
+  background-color: #FF0000;
+}
+
+#add-to-favorite-button.unliked:hover {
+  background-color: #CC0000;
+}
+
+#add-to-favorite-button.liked {
+  background-color: #FFB000;
+}
+
+#add-to-favorite-button.liked:hover {
+  background-color: #FFD000;
+}
+
+#add-to-favorite-button.liked::before {
+  /* content: '❤️'; */
+  margin-right: 5px;
+}
+
+#add-to-favorite-button.unliked::before {
+  /* content: '🤍'; */
+  margin-right: 5px;
+}
+
+
+
+/* Favorite Page Styles */
+.favorite-restaurant {
+  background-color: #F5F5DC;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  flex-basis: calc(33.333% - 20px);
+  box-sizing: border-box;
+  transition: transform 0.2s ease-in-out;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.favorite-restaurant:hover {
+  transform: translateY(-5px);
+}
+
+.favorite-restaurant img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.favorite-restaurant h2 {
+  font-size: 18px;
+  margin: 10px 0;
+  color: #333;
+}
+
+.favorite-restaurant p {
+  margin: 0;
+  color: #666;
+}
+
+.favorite-restaurant .favorite-detail-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #FFB000;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+  margin: 10px auto;
+}
+
+.favorite-restaurant .favorite-detail-link:hover {
+  background-color: #FFD000;
+}
+
+footer {
+  background-color: #186F65;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+html {
+  background-color: #FCE09B;
+}
